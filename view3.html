@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php require_once('dbconnect.php') ?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -19,6 +18,52 @@
 
   <style> body { padding-top: 60px; } </style>
 
+<style>
+
+#v3 {
+  width: 1200px;
+  height: 900px;
+  background: #bbb;
+}
+
+text {
+  pointer-events: none;
+}
+
+.grandparent text {
+  font-weight: bold;
+}
+
+rect {
+  fill: none;
+  stroke: #fff;
+}
+
+rect.parent,
+.grandparent rect {
+  stroke-width: 2px;
+}
+
+.grandparent rect {
+  fill: #fff;
+}
+
+.children rect.parent,
+.grandparent rect {
+  cursor: pointer;
+}
+
+rect.parent {
+  pointer-events: all;
+}
+
+.children:hover rect.child,
+.grandparent:hover rect {
+  fill: #aaa;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -32,17 +77,10 @@
   </div>
 
   <div class="container">
-    <h1>Visualizing Enrollment Data from the University of Virginia</h1>
-    <h2>A Case Study on Data Mining Techniques, Analytics, and Visualization Methods</h2>
-    <legend>Information</legend>
-    <div class="alert alert-danger">
-      Currently under construction.  Estimated completion: late April, 2013.
-    </div>
-    <p>Working with <a href="http://www.cs.virginia.edu/~sherriff">Professor Mark Sherriff</a>.</p>
-    <p>Special thanks to <a href="http://rabi.phys.virginia.edu/lab3e/">Professor Lou Bloomfield</a> for allowing the use of data found on <a href="http://rabi.phys.virginia.edu/mySIS/CS">Lou's List</a>.</p>
-    <legend>Visualization 1</legend>
-    <legend>Visualization 2</legend>
     <legend>Visualization 3</legend>
+    <div id="v3"></div>
+      <script type="text/javascript" src="js/v3.js"></script>
   </div>
+
 </body>
 </html>
